@@ -1,0 +1,67 @@
+<br>
+<br>
+<h5 *ngIf="errorMsg">{{ errorMsg }}</h5>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Gender</td>
+        <td>Contact Preference</td>
+        <td>Department</td>
+    </tr>
+    <tr *ngFor="let emp of employees">
+        <td>{{emp?.id}}</td>
+        <td>{{emp?.name}}</td>
+        <td>{{emp?.email}}</td>
+        <td>{{emp?.phone}}</td>
+        <td>{{emp?.gender}}</td>
+        <td>{{emp?.contactPreference}}</td>
+        <td>{{emp?.department}}</td>
+    </tr>
+</table>
+<br>
+<br>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Gender</td>
+        <td>Contact Preference</td>
+        <td>Department</td>
+    </tr>
+    <tr>
+        <td>{{ employee?.id }}</td>
+        <td>{{ employee?.name }}</td>
+        <td>{{ employee?.email }}</td>
+        <td>{{ employee?.phone }}</td>
+        <td>{{ employee?.gender }}</td>
+        <td>{{ employee?.contactPreference }}</td>
+        <td>{{ employee?.department }}</td>
+    </tr>
+</table>
+<br>
+<br>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Gender</td>
+        <td>Contact Preference</td>
+        <td>Department</td>
+    </tr>
+    <tr>
+        <td>{{ newEmployee?.id }}</td>
+        <td>{{ newEmployee?.name }}</td>
+        <td>{{ newEmployee?.email }}</td>
+        <td>{{ newEmployee?.phone }}</td>
+        <td>{{ newEmployee?.gender }}</td>
+        <td>{{ newEmployee?.contactPreference }}</td>
+        <td>{{ newEmployee?.department }}</td>
+    </tr>
+</table>

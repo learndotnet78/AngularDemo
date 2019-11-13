@@ -1,0 +1,54 @@
+<table class="table table-hover table-responsive-md">
+    <thead>
+        <tr scope="row" >
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Department</th>
+            <th scope="col">Contact Preference</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr scope="row">
+            <td>
+                {{ employee.id }}
+            </td>
+            <td>
+                {{ employee.name }}
+            </td>
+            <td>
+                {{ employee.email }}
+            </td>
+            <td>
+                {{ employee.phone }}
+            </td>
+            <td>
+                {{ employee.gender }}
+            </td>
+            <td>
+                <div [ngSwitch]= "employee.department">
+                    <span *ngSwitchCase="'HR'">Human Resources</span>
+                    <span *ngSwitchCase="'IT'">Information Technology</span>
+                    <span *ngSwitchCase="'SA'">Sales</span>
+                    <span *ngSwitchCase="'CM'">Compliance</span>
+                    <span *ngSwitchCase="'RG'">Regulatory</span>
+                    <span *ngSwitchDefault>N/A</span>
+                </div>
+            </td>
+            <td>
+                {{ employee.contactPreference }}
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="6">
+                <a class="btn btn-primary" [routerLink] ="['/home', {name : employee.name }]"
+                queryParamsHandling = "preserve">Back to List</a>
+                <button class="btn btn-primary pull-right" (click) ="viewNextEmployee()">View Next Employee</button>
+            </td>
+        </tr>
+    </tfoot>
+</table>

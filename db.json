@@ -1,0 +1,48 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Tom",
+      "email": "tom@test.com",
+      "phone": "123-456-7890",
+      "gender": "Male",
+      "contactPreference": "Email",
+      "department": "SA"
+    },
+    {
+      "id": 2,
+      "name": "Pam",
+      "email": "pam@test.com",
+      "phone": "123-456-7890",
+      "gender": "Female",
+      "contactPreference": "Email",
+      "department": "IT"
+    },
+    {
+      "id": 3,
+      "name": "Jim",
+      "email": "jim@test.com",
+      "phone": "123-456-7890",
+      "gender": "Male",
+      "contactPreference": "Email",
+      "department": "HR"
+    },
+    {
+      "id": 4,
+      "name": "Alex",
+      "email": "alex@test.com",
+      "phone": "123-456-7890",
+      "gender": "Male",
+      "contactPreference": "Email",
+      "department": "CM"
+    },
+    {
+      "id": 5,
+      "name": "Al",
+      "email": "al@test.com",
+      "department": "Management",
+      "contactPreference": "Email",
+      "gender": "Male"
+    }
+  ]
+}

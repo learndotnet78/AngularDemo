@@ -1,0 +1,77 @@
+<app-accordion [title]="employee.name" [hasJustViewed]="selectedEmpName === employee.name"> 
+ <div class="myPanelBody">
+                <div class="row">
+                    <div class="col-xs-6">
+                        Name : 
+                    </div>
+                    <div class="col-xs-6">
+                        {{employee.name}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        Email : 
+                    </div>
+                    <div class="col-xs-6">
+                        {{employee.email}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        Phone : 
+                    </div>
+                    <div class="col-xs-6">
+                        {{employee.phone}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        Gender : 
+                    </div>
+                    <div class="col-xs-6">
+                        {{employee.gender}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        Department : 
+                    </div>
+                    <div class="col-xs-6">
+                        <div [ngSwitch]="employee.department">
+                            <span *ngSwitchCase="'HR'">Human Resources</span>
+                            <span *ngSwitchCase="'IT'">Information Technology</span>
+                            <span *ngSwitchCase="'SA'">Sales</span>
+                            <span *ngSwitchCase="'CM'">Compliance</span>
+                            <span *ngSwitchCase="'RG'">Regulatory</span>
+                            <span *ngSwitchDefault>N/A</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        Phone
+                    </div>
+                    <div class="col-xs-6">
+                        {{employee.phone}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        Gender
+                    </div>
+                    <div class="col-xs-6">
+                        {{employee.gender}}
+                    </div>
+                </div>
+</div>
+<div class="myPanelBody">
+        <button class="btn btn-primary" (click)="viewEmployee()">View</button>
+        <button class="btn btn-primary" (click)="editEmployee()">Edit</button>
+        <span *ngIf="confirmDelete">
+            <span>Are you sure you want to delete?</span>
+            <button class="btn btn-danger" (click)="deleteEmployee()">Yes</button>
+            <button class="btn btn-primary" (click)="confirmDelete=false">No</button>
+        </span>
+        <button *ngIf="!confirmDelete" class="btn btn-danger" (click)="confirmDelete=true">Delete</button>
+    </div>
+</app-accordion>

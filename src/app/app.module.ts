@@ -18,7 +18,8 @@ import { EmployeeDetailsGuardService } from './form/employee-can-activate';
 import { AccordionComponent } from './shared/accordion.component';
 import { EmpoyeeApiService } from 'src/services/employeeapi.service';
 import { DemoapiComponent } from './demoapi/demoapi.component';
-
+import { ReactformComponent } from './reactform/reactform.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes : Routes = [
   { path: 'home', component: HomeComponent, resolve : { employeeList : EmployeeListResolverService}},
@@ -26,6 +27,7 @@ const appRoutes : Routes = [
   { path: 'employees/:id', component: EmployeeDetailsComponent, canActivate : [EmployeeDetailsGuardService]},
   { path: '', redirectTo : '/home', pathMatch : 'full'},
   { path: 'notfound', component: PageNotFoundComponent},
+  { path: 'form', component: ReactformComponent},
   { path: 'demoapi', component: DemoapiComponent},
   { path: '**', component: HomeComponent},
 ]
@@ -41,10 +43,11 @@ const appRoutes : Routes = [
     CreateEmployeeComponent,
     PageNotFoundComponent,
     AccordionComponent,
-    DemoapiComponent
+    DemoapiComponent,
+    ReactformComponent
   ],
   imports: [
-    BrowserModule,FormsModule,HttpClientModule,RouterModule.forRoot(appRoutes)
+    BrowserModule,FormsModule,HttpClientModule,ReactiveFormsModule,RouterModule.forRoot(appRoutes)
   ],
   providers: [EmployeeService,CreateEmployeeCanDeactivate,EmployeeListResolverService,EmployeeDetailsGuardService,EmpoyeeApiService],
   bootstrap: [AppComponent]
